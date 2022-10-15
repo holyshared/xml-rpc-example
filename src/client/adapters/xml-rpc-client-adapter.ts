@@ -5,13 +5,13 @@ export class XmlRpcClientAdapter implements RpcApiClient {
   constructor(private client: xmlrpc.Client) {
   }
 
-  public async echo(values: string[]): Promise<string> {
-    return new Promise<string>((resolve: (value: string) => void, reject: (err: Error) => void) => {
-      this.client.methodCall('echo', values, (err: Error, value: string) => {
+  public async echo(values: string[]): Promise<string[]> {
+    return new Promise<string[]>((resolve: (values: string[]) => void, reject: (err: Error) => void) => {
+      this.client.methodCall('echo', values, (err: Error, values: string[]) => {
         if (err) {
           return reject(err)
         }
-        resolve(value)
+        resolve(values)
       })
     })
   }

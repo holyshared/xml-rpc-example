@@ -4,7 +4,7 @@ export class WebApiClient {
   constructor(private client: RpcApiClient) {
   }
 
-  public async echo(values: string[]): Promise<string> {
+  public async echo(values: string[]): Promise<string[]> {
     return this.client.echo(values);
   }
 }

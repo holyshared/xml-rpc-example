@@ -1,3 +1,3 @@
 export interface RpcApiClient {
-  echo(values: string[]): Promise<string>
+  echo(values: string[]): Promise<string[]>
 }
