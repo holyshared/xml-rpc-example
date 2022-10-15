@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./dist/src/server.js",
+    "echo": "node ./dist/scripts/main.js"
+  },
+  "dependencies": {
+    "node-xmlrpc": "^1.3.3"
+  },
+  "devDependencies": {
+    "@types/xmlrpc": "^1.3.7",
+    "typescript": "^4.8.4"
+  }
+}
