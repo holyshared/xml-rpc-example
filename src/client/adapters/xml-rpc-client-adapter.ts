@@ -15,4 +15,15 @@ export class XmlRpcClientAdapter implements RpcApiClient {
       })
     })
   }
+
+  public async attachmentFile(values: any[]): Promise<any[]> {
+    return new Promise<any[]>((resolve: (values: any[]) => void, reject: (err: Error) => void) => {
+      this.client.methodCall('attachmentFile', values, (err: Error, values: any[]) => {
+        if (err) {
+          return reject(err)
+        }
+        resolve(values)
+      })
+    })
+  }
 }
